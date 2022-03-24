@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+    install:
+        runtime-versions:
+           java: corretto8
+           
+    build:
+        commands:
+            - echo Starting Java build at `date`
+            - mvn package
+            
+        finally:
+            - echo Finished build of Java Sample at `date`
+            
+artifacts:
+    files:
+        - 'target/aws-java-sample-1.0.jar'
